@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="527.0" prefHeight="488.0" prefWidth="318.0" style="-fx-background-color: #a4082c;">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="253.0" style="-fx-background-color: #517CC0; -fx-background-radius: 5px;">
+                     <children>
+                        <FontAwesomeIconView depthTest="DISABLE" glyphName="FACEBOOK" glyphStyle="-fx-fill;#fff" size="2em" wrappingWidth="34.7142858505249">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <Label text="LOGIN WITH FACEBOOK" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="253.0" style="-fx-background-color: #64CCF1; -fx-background-radius: 5px;">
+                     <children>
+                        <FontAwesomeIconView depthTest="DISABLE" glyphName="TWITTER" size="2em" wrappingWidth="34.7142858505249">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <Label text="LOGIN WITH TWITTER" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="253.0" style="-fx-background-color: #DF4930; -fx-background-radius: 5px;">
+                     <children>
+                        <FontAwesomeIconView depthTest="DISABLE" glyphName="GOOGLE" size="2em" wrappingWidth="34.7142858505249">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <Label text="LOGIN WITH GOOGLE" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children></VBox>
+            <Label layoutX="180.0" layoutY="38.0" prefHeight="21.0" prefWidth="210.0" text="User Sign Up">
+               <font>
+                  <Font name="Segoe UI Bold" size="22.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" layoutX="99.0" layoutY="94.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView glyphName="ENVELOPE_ALT" glyphStyle="-fx-fill;#BEBFC1" size="1.2em">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField prefHeight="33.0" prefWidth="420.0" promptText="Last Name" style="-fx-border-color: transparent; -fx-background-color: transaprent;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Button layoutX="206.0" layoutY="325.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #a4082c;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Light" size="15.0" />
+               </font>
+            </Button>
+            <HBox alignment="CENTER_LEFT" layoutX="99.0" layoutY="228.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView glyphName="LOCK" glyphStyle="-fx-fill;#BEBFC1" size="1.2em">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField prefHeight="33.0" prefWidth="100.0" promptText="Password" style="-fx-border-color: transparent; -fx-background-color: transaprent;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Pane layoutX="-2.0" layoutY="399.0" prefHeight="89.0" prefWidth="530.0" style="-fx-background-color: #BEBFC1;">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: transparent;" text="Already Signed Up?">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="127.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Login" underline="true">
+                     <font>
+                        <Font name="Segoe UI Black" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" layoutX="99.0" layoutY="139.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView glyphName="ENVELOPE_ALT" glyphStyle="-fx-fill;#BEBFC1" size="1.2em">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField prefHeight="33.0" prefWidth="420.0" promptText="First Name" style="-fx-border-color: transparent; -fx-background-color: transaprent;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="99.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView glyphName="ENVELOPE" glyphStyle="-fx-fill;#BEBFC1" size="1.2em">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField prefHeight="33.0" prefWidth="420.0" promptText="User Age" style="-fx-border-color: transparent; -fx-background-color: transaprent;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <ComboBox layoutX="210.0" layoutY="274.0" prefWidth="150.0" />
+            <Label layoutX="109.0" layoutY="279.0" text="Speciality :" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
+
