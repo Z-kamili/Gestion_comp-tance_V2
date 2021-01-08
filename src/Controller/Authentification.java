@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import com.sun.glass.ui.Window;
 
 import Database.DB_connection;
 import application.Apprenant;
 import application.Main;
+import application.compétance;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,98 +26,81 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
-public class Authentification{
-	@FXML   ComboBox<String> comboBox = new ComboBox<String>();
-	@FXML   javafx.scene.control.TextField txt_nom;
-	@FXML   PasswordField txt_pwd;
-	@FXML   javafx.scene.control.TextField txt_age;
+public class Authentification implements Initializable  {
+	@FXML   ComboBox<String> comboBox;   
+	@FXML   javafx.scene.control.TextField txt_nom_insc;
+	@FXML   PasswordField txt_pwd_insc;
+	@FXML   javafx.scene.control.TextField txt_age_insc;
+	@FXML   javafx.scene.control.TextField txt_email_insc;
 	@FXML   javafx.scene.control.TextField username;
-	ObservableList<String> items = FXCollections.observableArrayList("1er annees","2eme annees");
-	private DB_connection db;
-	private boolean etats = false;
+	String nom,password,query,email,filier,Role;
+	int age;
+	List<compétance> cmpt;
+	DB_connection db;
 	
-	
-
-
- @FXML 
- public void Test() {
-	 
-	 db = new DB_connection();
-	 String nom,password,query;
-	 List<Apprenant> users = new ArrayList<Apprenant>();
-	// System.out.println(txt_pwd.getText());
-	 if(!txt_nom.getText().equals("") && !txt_pwd.getText().equals("")){
-		 nom = txt_nom.getText();
-		 password = txt_pwd.getText();
-		 query = "select * from User";
-	     users = db.getUsers(query);
-	    // System.out.println("hello");
-	System.out.println(users.size());
-	for(int i=0;i<users.size();i++) {
-		System.out.println(password + "" + users.get(i).getPassword().equals(password));
-		if(users.get(i).getNom().equals(nom) && users.get(i).getPassword().equals(password)){
-			this.etats = true;
-			break;
-			
-		}
-		
-	}	 
-	 }else {
-		 
-		 //erreur
-		 
-	 }
-	 
-	if(this.etats == true) {
-		Main.window.close();
-		
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../View/ConsulterApprenant.fxml"));
-			Scene scene = new Scene(root,700,400);
-			Stage primaryStage = new Stage();
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			Main.window = primaryStage;
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
-	}else {
-		
-		//erreur
+	@Override
+	public void initialize(URL url,ResourceBundle rb) {
+		comboBox.getItems().addAll("1 er annee","2 eme annee");
 	}
-	 
-	 
- }
-	
-	@FXML 
-	public void  Login(){
-		
-		Main.window.close();
-		comboBox.getItems().add("Choice 1");
-		comboBox.getItems().add("Choice 2");
-		comboBox.getItems().add("Choice 3");
-		
-		
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../View/Inscription.fxml"));
-			Scene scene = new Scene(root,700,400);
-			Stage primaryStage = new Stage();
-			
-			scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
-	} 
 	
 	@FXML 
 	public void Inscription() {
 		
-		
+		 db = new DB_connection();
+		 cmpt = new ArrayList<compétance>();
+		// System.out.println(txt_pwd.getText());
+		 if(!txt_nom_insc.getText().equals("") && !txt_pwd_insc.getText().equals("") && !txt_age_insc.getText().equals("") && !txt_email_insc.getText().equals("") && !comboBox.getValue().equals(" ")){
+			 if(comboBox.getValue().equals("1 er annee")){
+				 query = "select * from competences where id >= 1 And id <= 9 ";
+				 cmpt = db.getCompt(query);
+				 Role = "Apprenant";
+				 Apprenant app = new Apprenant(txt_nom_insc.getText(),txt_email_insc.getText(),Integer.parseInt(txt_age_insc.getText()),comboBox.getValue(),txt_pwd_insc.getText(),Role);
+				 
+				 try {
+					  db.Add_Apprenant(app);
+					  db.competance_to_user(cmpt); 
+				 }catch (Exception e) {
+					 
+					 System.out.println(e.getMessage());
+					 
+				 }
+			 }else if(comboBox.getValue().equals("2 eme annee")){
+				 query = "select * from competences where id >= 9 And id <=22";
+				 cmpt = db.getCompt(query);
+				 Role = "Apprenant";
+				 
+				 Apprenant app = new Apprenant(txt_nom_insc.getText(),txt_email_insc.getText(),Integer.parseInt(txt_age_insc.getText()),comboBox.getValue(),txt_pwd_insc.getText(),Role);
+				 
+				 try {
+					  db.Add_Apprenant(app);
+					  db.competance_to_user(cmpt);
+					 Main.window.close();
+					  try {
+							Parent root = FXMLLoader.load(getClass().getResource("../View/ConsulterApprenant.fxml"));
+							Scene scene = new Scene(root,700,400);
+							Stage primaryStage = new Stage();
+							
+							scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
+							primaryStage.setScene(scene);
+							Main.window = primaryStage;
+							primaryStage.show();
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+					 
+					 
+				 }catch (Exception e) {
+					 
+					 System.out.println(e.getMessage());
+					 
+				 }
+				 
+				 
+				
+			 } 
+			
+		}	 
 		
 		
 	}

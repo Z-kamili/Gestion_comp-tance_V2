@@ -24,7 +24,6 @@ public class ViewCompetances implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
 		name.setCellValueFactory(new PropertyValueFactory<>("name"));
 		N1.setCellValueFactory(new PropertyValueFactory<>("N1"));
 		N2.setCellValueFactory(new PropertyValueFactory<>("N2"));
