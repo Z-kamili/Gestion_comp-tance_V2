@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application{
 	 public static Stage window;
+	 public static String nom_session;
 	
 	@Override
 	public void start(Stage primaryStage){

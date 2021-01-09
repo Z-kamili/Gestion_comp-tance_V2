@@ -50,55 +50,28 @@ public class Authentification implements Initializable  {
 		 cmpt = new ArrayList<compétance>();
 		// System.out.println(txt_pwd.getText());
 		 if(!txt_nom_insc.getText().equals("") && !txt_pwd_insc.getText().equals("") && !txt_age_insc.getText().equals("") && !txt_email_insc.getText().equals("") && !comboBox.getValue().equals(" ")){
-			 if(comboBox.getValue().equals("1 er annee")){
-				 query = "select * from competences where id >= 1 And id <= 9 ";
+				 query = "select * from competences";
 				 cmpt = db.getCompt(query);
 				 Role = "Apprenant";
 				 Apprenant app = new Apprenant(txt_nom_insc.getText(),txt_email_insc.getText(),Integer.parseInt(txt_age_insc.getText()),comboBox.getValue(),txt_pwd_insc.getText(),Role);
 				 
 				 try {
 					  db.Add_Apprenant(app);
-					  db.competance_to_user(cmpt); 
-				 }catch (Exception e) {
+					  db.competance_to_user(cmpt,comboBox.getValue()); 
+					  Main.window.close();
+					 Parent root = FXMLLoader.load(getClass().getResource("../View/ConsulterApprenant.fxml"));
+					 Scene scene = new Scene(root,700,400);
+					 Stage primaryStage = new Stage();
+					 scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
+					 primaryStage.setScene(scene);
+					 Main.window = primaryStage;
+					 primaryStage.show();
+					  
+				 }catch (Exception e){
 					 
 					 System.out.println(e.getMessage());
 					 
 				 }
-			 }else if(comboBox.getValue().equals("2 eme annee")){
-				 query = "select * from competences where id >= 9 And id <=22";
-				 cmpt = db.getCompt(query);
-				 Role = "Apprenant";
-				 
-				 Apprenant app = new Apprenant(txt_nom_insc.getText(),txt_email_insc.getText(),Integer.parseInt(txt_age_insc.getText()),comboBox.getValue(),txt_pwd_insc.getText(),Role);
-				 
-				 try {
-					  db.Add_Apprenant(app);
-					  db.competance_to_user(cmpt);
-					 Main.window.close();
-					  try {
-							Parent root = FXMLLoader.load(getClass().getResource("../View/ConsulterApprenant.fxml"));
-							Scene scene = new Scene(root,700,400);
-							Stage primaryStage = new Stage();
-							
-							scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
-							primaryStage.setScene(scene);
-							Main.window = primaryStage;
-							primaryStage.show();
-							
-						}catch(Exception e){
-							e.printStackTrace();
-						}
-					 
-					 
-				 }catch (Exception e) {
-					 
-					 System.out.println(e.getMessage());
-					 
-				 }
-				 
-				 
-				
-			 } 
 			
 		}	 
 		

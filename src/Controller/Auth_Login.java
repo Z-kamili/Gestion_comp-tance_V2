@@ -47,6 +47,7 @@ public class Auth_Login {
 		 List<Apprenant> users = new ArrayList<Apprenant>();
 		// System.out.println(txt_pwd.getText());
 		 if(!txt_nom.getText().equals("") && !txt_pwd.getText().equals("")){
+			Main.nom_session = txt_nom.getText();
 			 nom = txt_nom.getText();
 			 password = txt_pwd.getText();
 			 query = "select * from User";
