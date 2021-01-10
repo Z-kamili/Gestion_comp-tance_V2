@@ -78,6 +78,25 @@ public class Authentification implements Initializable  {
 		
 	}
 	
+	@FXML 
+	public void  NextScene(){
+		
+		Main.window.close();
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
+			Scene scene = new Scene(root,700,400);
+			Stage primaryStage = new Stage();
+			
+			scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			Main.window = primaryStage;
+			primaryStage.show();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+	}
+	
 	@FXML
 	public void nextScene(){
 		

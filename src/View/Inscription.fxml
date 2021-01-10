@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -12,17 +13,18 @@
    <children>
       <Pane layoutX="-153.0" layoutY="-219.0" prefHeight="702.0" prefWidth="725.0">
          <children>
-            <Label layoutX="275.0" layoutY="292.0" text="Nom" />
-            <Label layoutX="274.0" layoutY="343.0" text="email" />
-            <Label layoutX="280.0" layoutY="388.0" text="Age" />
-            <Label layoutX="263.0" layoutY="431.0" text="password" />
-            <TextField fx:id="txt_nom_insc" layoutX="363.0" layoutY="288.0" />
-            <TextField fx:id="txt_email_insc" layoutX="363.0" layoutY="339.0" />
-            <TextField fx:id="txt_age_insc" layoutX="363.0" layoutY="384.0" />
-            <Button layoutX="401.0" layoutY="506.0" mnemonicParsing="false" onAction="#Inscription" text="Inscription" />
-            <Label layoutX="274.0" layoutY="474.0" text="Filiaire" />
-            <ComboBox fx:id="comboBox" layoutX="362.0" layoutY="470.0" prefWidth="150.0" />
-            <PasswordField fx:id="txt_pwd_insc" layoutX="363.0" layoutY="427.0" />
+            <Label layoutX="324.0" layoutY="292.0" text="Nom" />
+            <Label layoutX="323.0" layoutY="335.0" text="email" />
+            <Label layoutX="326.0" layoutY="388.0" text="Age" />
+            <Label layoutX="312.0" layoutY="431.0" text="password" />
+            <TextField fx:id="txt_nom_insc" layoutX="438.0" layoutY="288.0" />
+            <TextField fx:id="txt_email_insc" layoutX="437.0" layoutY="331.0" />
+            <TextField fx:id="txt_age_insc" layoutX="438.0" layoutY="384.0" />
+            <Button layoutX="438.0" layoutY="530.0" mnemonicParsing="false" onAction="#Inscription" text="Inscription" />
+            <Label layoutX="320.0" layoutY="474.0" text="Filiaire" />
+            <ComboBox fx:id="comboBox" layoutX="437.0" layoutY="470.0" prefWidth="150.0" />
+            <PasswordField fx:id="txt_pwd_insc" layoutX="438.0" layoutY="427.0" />
+            <Hyperlink fx:id="NextScene" layoutX="363.0" layoutY="531.0" text="Login" />
 
          </children>
       </Pane>

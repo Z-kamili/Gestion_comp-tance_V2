@@ -1,1 +1,63 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#txt_label{
+    -fx-margin: 0px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 600;
+    -fx-font-size: 16px;
+    -fx-line-height: 24px;
+    -fx-padding: 8px 18px;
+}
+#txt_label,#txt_label_title{
+    -fx-margin: 0px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 600;
+    -fx-font-size: 16px;
+    -fx-line-height: 24px;
+    -fx-padding: 8px 18px;
+}
+#txt_label_N1,#txt_label_N2,#txt_label_N3{
+	-fx-font-size: 11px;
+	-fx-font-weight: bold;
+	-fx-text-fill : white;
+	-fx-pref-width: 130;
+	-fx-pref-height: 30;
+	-fx-alignment:  center;
+	-fx-background-color: rgb(240, 240, 240);
+	-fx-border-radius: 8; 
+    -fx-background-radius: 8;
+    -fx-color: rgb(0,0,0);
+}
+
+#txt_label_N1_txt,#txt_label_N2_txt,#txt_label_N3_txt{
+	-fx-font-size: 11px;
+	-fx-font-weight: bold;
+	-fx-text-fill : white;
+	-fx-pref-width: 130;
+	-fx-pref-height: 30;
+	-fx-alignment:  center;
+	-fx-background-color: rgb(240, 240, 240);
+	-fx-border-radius: 8; 
+    -fx-background-radius: 8;
+    -fx-color: black;
+	
+	
+}
+
+#gFiWkB {
+    -fx-display: flex;
+   -fx-font-family: "Nunito Sans", sans-serif;
+   -fx-font-size: 10 px;
+   -fx-line-height: 10px;
+   -fx-font-weight: 700;
+  -fx-text-decoration: none;
+   -fx-padding: 10px 24px;
+   -fx-border-radius: 8px;
+   -fx-cursor: pointer;
+   -fx-transition: all 0.2s ease 0s;
+   -fx-background-color: rgb(80, 77, 193);
+   -fx-color: rgb(0, 0, 0);
+}

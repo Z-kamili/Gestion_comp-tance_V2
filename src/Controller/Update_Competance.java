@@ -26,10 +26,13 @@ public class Update_Competance implements Initializable {
 	@FXML javafx.scene.control.Label txt_label_N1;
 	@FXML javafx.scene.control.Label txt_label_N2;
 	@FXML javafx.scene.control.Label txt_label_N3;
-    public 	List<Gestion_user_competance> getuser_comp;
-	String query;
-	DB_connection db;
-	int id;
+	@FXML javafx.scene.control.Label txt_label_N1_txt;
+	@FXML javafx.scene.control.Label txt_label_N2_txt;
+	@FXML javafx.scene.control.Label txt_label_N3_txt;
+    private List<Gestion_user_competance> getuser_comp;
+	private String query;
+	private DB_connection db;
+	private int id;
 	
 	@Override
 	public void initialize(URL url,ResourceBundle rb) {
@@ -56,26 +59,30 @@ public class Update_Competance implements Initializable {
 	@FXML
 	void Select(javafx.event.ActionEvent event){
 		txt_label.setText(comboBox_cmpt.getSelectionModel().getSelectedItem().toString());
-		//System.out.println(Main.nom_session + " " +comboBox_cmpt.getSelectionModel().getSelectedItem().toString());
-		//System.out.println(getuser_comp.isN1());
 		for(int i=0;i<getuser_comp.size();i++) {	
 if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSelectedItem().toString())) {
 	if(getuser_comp.get(i).isN1() == true){
+		txt_label_N1.setStyle("-fx-background-color: green;");
 		txt_label_N1.setText("Valider");
 	}else {
+		txt_label_N1.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N1.setText("Nom Valide");
 	}
 		
 	if(getuser_comp.get(i).isN2() == true){
+		txt_label_N2.setStyle("-fx-background-color: green;");
 		txt_label_N2.setText("Valider");
 	}
 	else {
+		    txt_label_N2.setStyle("-fx-background-color: rgb(240, 240, 240);");
 			txt_label_N2.setText("Nom Valide");
 		}
 			
 	if(getuser_comp.get(i).isN3() == true) {
+		txt_label_N3.setStyle("-fx-background-color: green;");
 		txt_label_N3.setText("Valider");
 	}else {
+		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
 			txt_label_N3.setText("Nom Valide");
 		
 	
@@ -92,66 +99,47 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 	public void click_Label_1() {
 		
 	if(txt_label_N1.getText().equals("Valider")) {
-		
+		txt_label_N1.setStyle("-fx-background-color: rgb(240, 240, 240);");
+		txt_label_N2.setStyle("-fx-background-color: rgb(240, 240, 240);");
+		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N1.setText("Nom Valide");
 		txt_label_N2.setText("Nom Valide");
 		txt_label_N3.setText("Nom Valide");
 		
 	}else {
-		
+		txt_label_N1.setStyle("-fx-background-color: green;");
 		txt_label_N1.setText("Valider");
 		
 	}
-
-	
-/*	if(txt_label_N2.getText().equals("Valider")) {
-		
-		txt_label_N2.setText("Nom Valide");
-		
-	}else {
-		
-		txt_label_N2.setText("Valider");
-		
-	}
-	
-	if(txt_label_N3.getText().equals("Valider")) {
-		
-		txt_label_N3.setText("Nom Valide");
-		
-	}else {
-		
-		txt_label_N3.setText("Valider");
-		
-	}*/
 		
 	}
 	
 	public void click_Label_2() {
 		
 	if(txt_label_N2.getText().equals("Valider") ) {
-		
+		txt_label_N2.setStyle("-fx-background-color: rgb(240, 240, 240);");
+		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N2.setText("Nom Valide");
-		txt_label_N3.setText("Nom Valide");
-		
-		
+		txt_label_N3.setText("Nom Valide");	
 	}else {
-		
+		txt_label_N1.setStyle("-fx-background-color: green;");
+		txt_label_N2.setStyle("-fx-background-color: green;");
 		txt_label_N2.setText("Valider");
 		txt_label_N1.setText("Valider");
 	}
-
-	
-
 		
 	}
 	
 	public void click_Label_3() {
 		
 	if(txt_label_N3.getText().equals("Valider") ) {
-		
+		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N3.setText("Nom Valide");
 		
 	}else {
+		txt_label_N1.setStyle("-fx-background-color: green;");
+		txt_label_N2.setStyle("-fx-background-color: green;");
+		txt_label_N3.setStyle("-fx-background-color: green;");
 		txt_label_N3.setText("Valider");
 		txt_label_N2.setText("Valider");
 		txt_label_N1.setText("Valider");
