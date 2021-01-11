@@ -9,7 +9,18 @@
     -fx-line-height: 24px;
     -fx-padding: 8px 18px;
 }
-#txt_label,#txt_label_title{
+#label_2_title,#label_1_title{
+    -fx-margin: 0px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+    -fx-line-height: 24px;
+    -fx-padding: 8px 18px;
+}
+
+#txt_label,#txt_label_title,#label_1{
     -fx-margin: 0px;
     -fx-font-family: "Nunito Sans", sans-serif;
     -fx-color: #000000;
@@ -29,7 +40,19 @@
 	-fx-background-color: rgb(240, 240, 240);
 	-fx-border-radius: 8; 
     -fx-background-radius: 8;
-    -fx-color: rgb(0,0,0);
+    -fx-color: rgb(255,255,255);
+}
+#label_2,#label_3,#label_4{
+	-fx-font-size: 11px;
+	-fx-font-weight: bold;
+	-fx-text-fill : white;
+	-fx-pref-width: 130;
+	-fx-pref-height: 30;
+	-fx-alignment:  center;
+	-fx-background-color: rgb(240, 240, 240);
+	-fx-border-radius: 8; 
+    -fx-background-radius: 8;
+    -fx-color: rgb(0,0,0);	
 }
 
 #txt_label_N1_txt,#txt_label_N2_txt,#txt_label_N3_txt{

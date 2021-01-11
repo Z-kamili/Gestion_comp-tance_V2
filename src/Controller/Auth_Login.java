@@ -20,6 +20,7 @@ public class Auth_Login {
 	@FXML   javafx.scene.control.TextField username;
 	private DB_connection db;
 	private boolean etats = false;
+	private String  Role;
 	@FXML 
 	public void  Login(){
 		
@@ -52,14 +53,17 @@ public class Auth_Login {
 			 password = txt_pwd.getText();
 			 query = "select * from User";
 		     users = db.getUsers(query);
-		    // System.out.println("hello");
-		//System.out.println(users.size());
+             
 		for(int i=0;i<users.size();i++) {
-			System.out.println(password + "" + users.get(i).getPassword().equals(password));
-			if(users.get(i).getNom().equals(nom) && users.get(i).getPassword().equals(password)){
+			
+			if(users.get(i).getPrenom().equals(nom) && users.get(i).getPassword().equals(password)){
 				this.etats = true;
+				System.out.println("hello");
+				Role = users.get(i).getRole();
+				Main.nom_session =  users.get(i).getPrenom();
+				Main.Promo = users.get(i).getFiliaire();
+				System.out.println(Main.Promo);
 				break;
-				
 			}
 			
 		}	 
@@ -69,7 +73,7 @@ public class Auth_Login {
 			 
 		 }
 		 
-		if(this.etats == true) {
+		if(this.etats == true && Role.equals("Apprenant")){
 			Main.window.close();
 			
 			try {
@@ -84,9 +88,19 @@ public class Auth_Login {
 				e.printStackTrace();
 			}
 			
-		}else {
-			
-			//erreur
+		}else if(this.etats == true && Role.equals("Staf")){
+			Main.window.close();
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("../View/ViewCompetance.fxml"));
+				Scene scene = new Scene(root,700,400);
+				Stage primaryStage = new Stage();
+				scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
+				primaryStage.setScene(scene);
+				primaryStage.show();
+				Main.window = primaryStage;
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 			
 		}
 		 

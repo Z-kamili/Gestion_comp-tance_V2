@@ -39,19 +39,16 @@ public class Update_Competance implements Initializable {
 		
 		cmp = new ArrayList<compétance>();
 		query = "select * from competences";
-		System.out.println("entree");
-		db = new DB_connection();
-		cmp =  db.getCompt(query);
-		System.out.println(cmp.size());
-		
+		db    =   new DB_connection();
+		cmp   =  db.getCompt(query);
 		 for(int i=0;i<cmp.size();i++) {
 			 
 			 comboBox_cmpt.getItems().addAll(cmp.get(i).getTitle()); 
 			 
 		 }
-		 query = "select id_user,id_com,N1,N2,N3,title from user_compétance inner join user inner join competences  ON  user.id = user_compétance.id_user And user_compétance.id_com = competences.id  where user.nom = ?";
+		  query = "select id_user,id_com,N1,N2,N3,title from user_compétance inner join user inner join competences  ON  user.id = user_compétance.id_user And user_compétance.id_com = competences.id  where user.Email = ?";
 	      getuser_comp = db.getuser_comp(query,Main.nom_session);
-			
+			System.out.println(Main.nom_session);
 		
 		
 	}
@@ -59,11 +56,13 @@ public class Update_Competance implements Initializable {
 	@FXML
 	void Select(javafx.event.ActionEvent event){
 		txt_label.setText(comboBox_cmpt.getSelectionModel().getSelectedItem().toString());
+		System.out.println(getuser_comp.size());
 		for(int i=0;i<getuser_comp.size();i++) {	
 if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSelectedItem().toString())) {
 	if(getuser_comp.get(i).isN1() == true){
 		txt_label_N1.setStyle("-fx-background-color: green;");
 		txt_label_N1.setText("Valider");
+		System.out.println("hhhhh");
 	}else {
 		txt_label_N1.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N1.setText("Nom Valide");
@@ -92,6 +91,12 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 			
 		}
 				
+		
+		
+	}
+	
+	public void getUsers_Promo() {
+		
 		
 		
 	}
@@ -190,9 +195,9 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 			}
 			
 		}
-		String query = "UPDATE `user_compétance`  INNER JOIN user On user_compétance.id_user = user.id  SET `N1`=?,`N2`=?,`N3`=? WHERE user_compétance.id_com =? And user.nom = ?";
+		String query = "UPDATE `user_compétance`  INNER JOIN user On user_compétance.id_user = user.id  SET `N1`=?,`N2`=?,`N3`=? WHERE user_compétance.id_com =? And user.Email = ?";
 		db.Gestioncompétance(query,Main.nom_session,N1, N2, N3,id);
-	    String query_1 = "select id_user,id_com,N1,N2,N3,title from user_compétance inner join user inner join competences  ON  user.id = user_compétance.id_user And user_compétance.id_com = competences.id  where user.nom = ?";
+	    String query_1 = "select id_user,id_com,N1,N2,N3,title from user_compétance inner join user inner join competences  ON  user.id = user_compétance.id_user And user_compétance.id_com = competences.id  where user.Email = ?";
 	    getuser_comp.clear();
 	    getuser_comp = db.getuser_comp(query_1,Main.nom_session);
 		

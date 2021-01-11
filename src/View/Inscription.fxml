@@ -24,7 +24,7 @@
             <Label layoutX="320.0" layoutY="474.0" text="Filiaire" />
             <ComboBox fx:id="comboBox" layoutX="437.0" layoutY="470.0" prefWidth="150.0" />
             <PasswordField fx:id="txt_pwd_insc" layoutX="438.0" layoutY="427.0" />
-            <Hyperlink fx:id="NextScene" layoutX="363.0" layoutY="531.0" text="Login" />
+            <Hyperlink layoutX="363.0" layoutY="531.0" onAction="#NextScene" text="Login" />
 
          </children>
       </Pane>

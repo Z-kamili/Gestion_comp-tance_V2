@@ -55,6 +55,15 @@ public class Gestion_user_competance {
 		this.title = title;
 	}
 	
+	public Gestion_user_competance(int id_user, int id_comp, boolean n1, boolean n2, boolean n3){
+		super();
+		this.id_user = id_user;
+		this.id_comp = id_comp;
+		N1 = n1;
+		N2 = n2;
+		N3 = n3;
+	}
+	
 	public void  Clear_Data() {
 		this.N1 = false;
 		this.N2 = false;

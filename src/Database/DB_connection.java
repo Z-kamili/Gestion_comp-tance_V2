@@ -11,6 +11,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 import application.Apprenant;
 import application.Gestion_user_competance;
+import application.Main;
 import application.User;
 import application.compétance;
 
@@ -61,6 +62,7 @@ public class DB_connection{
 	            String email = rs.getString("email");
 	            String Filiaire = rs.getString("Promo");
 	            String Role = rs.getString("Role");
+	            System.out.println(Filiaire);
 	            int id  = rs.getInt("id");
 	            users.add(new Apprenant(id,name,email,age,Filiaire,password,Role));
 	        }
@@ -76,9 +78,36 @@ public class DB_connection{
 	}
 	
 	
+       public List<Apprenant> getUsers_Promo(String req){
+		
+		try{  
+            Connection();
+            java.sql.PreparedStatement prestmt = con.prepareStatement(req);
+		    ResultSet rs = prestmt.executeQuery(req);
+	        while (rs.next()) {
+	            String name = rs.getString("nom");
+	            String password = rs.getString("password");
+	            Integer age = rs.getInt("age");
+	            String email = rs.getString("email");
+	            String Filiaire = rs.getString("Promo");
+	            String Role = rs.getString("Role");
+	            int id  = rs.getInt("id");
+	            users.add(new Apprenant(id,name,email,age,Filiaire,password,Role));
+	        }
+	        con.close();     
+			}catch(Exception e){ 
+				
+				System.out.println(e);
+				
+			}
+		
+		return users;
+		
+	}
+	
 	
 	public List<compétance> getCompt(String req){
-		 System.out.println("entree_2");
+		// System.out.println("entree_2");
 		try{  
             Connection();
 			java.sql.Statement statement = con.createStatement();
@@ -119,6 +148,24 @@ public class DB_connection{
 		     
 		    	return G_cmp;
           }
+	
+	public List<Gestion_user_competance> getuser_comp_2(String req){
+	    String sql = req;
+	    G_cmp = new ArrayList<Gestion_user_competance>();
+		Connection();
+	    try{
+	    	 java.sql.PreparedStatement prestmt = con.prepareStatement(req);
+		     ResultSet rs = prestmt.executeQuery();
+		     while (rs.next()) {
+		    	 G_cmp.add(new Gestion_user_competance(rs.getInt("id_user"),rs.getInt("id_com"),rs.getBoolean("N1"),rs.getBoolean("N2"),rs.getBoolean("N3")));
+		        }
+		     con.close();  
+	    }catch(Exception e){
+	    	System.out.println(e.getMessage());	
+	    }
+	     
+	    	return G_cmp;
+      }
 	
 	public void Add_Apprenant(Apprenant app) throws SQLException{
 		
