@@ -59,7 +59,7 @@ public class Authentification implements Initializable  {
 					  db.Add_Apprenant(app);
 					  db.competance_to_user(cmpt,comboBox.getValue()); 
 					  Main.window.close();
-					 Parent root = FXMLLoader.load(getClass().getResource("../View/ConsulterApprenant.fxml"));
+					 Parent root = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
 					 Scene scene = new Scene(root,700,400);
 					 Stage primaryStage = new Stage();
 					 scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
