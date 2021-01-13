@@ -145,7 +145,6 @@ if(competance_user.get(i).isN3()) {
 			Parent root = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
 			Scene scene = new Scene(root,700,400);
 			Stage primaryStage = new Stage();
-			
 			scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			Main.window = primaryStage;

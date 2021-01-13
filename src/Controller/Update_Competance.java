@@ -111,9 +111,9 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 		txt_label_N1.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N2.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
-		txt_label_N1.setText("Nom Valide");
-		txt_label_N2.setText("Nom Valide");
-		txt_label_N3.setText("Nom Valide");
+		txt_label_N1.setText("IN Valide");
+		txt_label_N2.setText("IN Valide");
+		txt_label_N3.setText("IN Valide");
 		
 	}else {
 		txt_label_N1.setStyle("-fx-background-color: green;");
@@ -128,8 +128,8 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 	if(txt_label_N2.getText().equals("Valider") ) {
 		txt_label_N2.setStyle("-fx-background-color: rgb(240, 240, 240);");
 		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
-		txt_label_N2.setText("Nom Valide");
-		txt_label_N3.setText("Nom Valide");	
+		txt_label_N2.setText("IN Valide");
+		txt_label_N3.setText("IN Valide");	
 	}else {
 		txt_label_N1.setStyle("-fx-background-color: green;");
 		txt_label_N2.setStyle("-fx-background-color: green;");
@@ -143,7 +143,7 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 		
 	if(txt_label_N3.getText().equals("Valider") ) {
 		txt_label_N3.setStyle("-fx-background-color: rgb(240, 240, 240);");
-		txt_label_N3.setText("Nom Valide");
+		txt_label_N3.setText("IN Valide");
 		
 	}else {
 		txt_label_N1.setStyle("-fx-background-color: green;");
