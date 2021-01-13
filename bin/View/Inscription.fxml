@@ -11,20 +11,20 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Authentification">
    <children>
-      <Pane layoutX="-153.0" layoutY="-219.0" prefHeight="702.0" prefWidth="725.0">
+      <Pane layoutX="-139.0" layoutY="-220.0" prefHeight="702.0" prefWidth="725.0">
          <children>
-            <Label layoutX="324.0" layoutY="292.0" text="Nom" />
-            <Label layoutX="323.0" layoutY="335.0" text="email" />
-            <Label layoutX="326.0" layoutY="388.0" text="Age" />
-            <Label layoutX="312.0" layoutY="431.0" text="password" />
-            <TextField fx:id="txt_nom_insc" layoutX="438.0" layoutY="288.0" />
-            <TextField fx:id="txt_email_insc" layoutX="437.0" layoutY="331.0" />
-            <TextField fx:id="txt_age_insc" layoutX="438.0" layoutY="384.0" />
-            <Button layoutX="438.0" layoutY="530.0" mnemonicParsing="false" onAction="#Inscription" text="Inscription" />
-            <Label layoutX="320.0" layoutY="474.0" text="Filiaire" />
-            <ComboBox fx:id="comboBox" layoutX="437.0" layoutY="470.0" prefWidth="150.0" />
-            <PasswordField fx:id="txt_pwd_insc" layoutX="438.0" layoutY="427.0" />
-            <Hyperlink layoutX="363.0" layoutY="531.0" onAction="#NextScene" text="Login" />
+            <Label layoutX="263.0" layoutY="284.0" text="Nom" />
+            <Label layoutX="263.0" layoutY="343.0" text="email" />
+            <Label layoutX="268.0" layoutY="401.0" text="Age" />
+            <Label layoutX="255.0" layoutY="460.0" text="password" />
+            <TextField fx:id="txt_nom_insc" layoutX="354.0" layoutY="273.0" prefHeight="39.0" prefWidth="244.0" />
+            <TextField fx:id="txt_email_insc" layoutX="354.0" layoutY="332.0" prefHeight="39.0" prefWidth="244.0" />
+            <TextField fx:id="txt_age_insc" layoutX="354.0" layoutY="390.0" prefHeight="39.0" prefWidth="244.0" />
+            <Button fx:id="btn_insc" layoutX="357.0" layoutY="605.0" mnemonicParsing="false" onAction="#Inscription" prefHeight="39.0" prefWidth="238.0" text="Inscription" />
+            <Label layoutX="262.0" layoutY="520.0" text="Filiaire" />
+            <ComboBox fx:id="comboBox" layoutX="357.0" layoutY="501.0" prefHeight="39.0" prefWidth="244.0" />
+            <PasswordField fx:id="txt_pwd_insc" layoutX="354.0" layoutY="441.0" prefHeight="39.0" prefWidth="244.0" />
+            <Hyperlink fx:id="link" layoutX="305.0" layoutY="570.0" onAction="#NextScene" text="Login" />
 
          </children>
       </Pane>

@@ -20,6 +20,7 @@
             <Label fx:id="txt_label_N1" layoutX="290.0" layoutY="559.0" onMouseClicked="#click_Label_1" prefHeight="17.0" prefWidth="43.0" />
             <Label fx:id="txt_label_N2" layoutX="449.0" layoutY="559.0" onMouseClicked="#click_Label_2" prefHeight="17.0" prefWidth="47.0" />
             <Label fx:id="txt_label_N3" layoutX="604.0" layoutY="559.0" onMouseClicked="#click_Label_3" prefHeight="17.0" prefWidth="43.0" />
+            <Button fx:id="gFiWkB" layoutX="677.0" layoutY="407.0" mnemonicParsing="false" onAction="#NextScene" prefHeight="41.0" prefWidth="82.0" text="Fermer" />
          </children>
       </Pane>
    </children>

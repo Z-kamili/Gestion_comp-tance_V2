@@ -27,7 +27,7 @@ public class Auth_Login {
 		Main.window.close();
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../View/Inscription.fxml"));
-			Scene scene = new Scene(root,700,400);
+			Scene scene = new Scene(root,700,600);
 			Stage primaryStage = new Stage();
 			
 			scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());

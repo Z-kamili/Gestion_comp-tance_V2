@@ -13,8 +13,12 @@ import application.compétance;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 
 public class Update_Competance implements Initializable {
 	@FXML   ComboBox<String> comboBox_cmpt;
@@ -152,6 +156,25 @@ if(getuser_comp.get(i).getTitle().equals(comboBox_cmpt.getSelectionModel().getSe
 
 	
 
+		
+	}
+	
+	@FXML 
+	public void  NextScene(){
+		
+		Main.window.close();
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
+			Scene scene = new Scene(root,700,400);
+			Stage primaryStage = new Stage();
+			
+			scene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			Main.window = primaryStage;
+			primaryStage.show();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 	

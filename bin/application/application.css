@@ -84,3 +84,91 @@
    -fx-background-color: rgb(80, 77, 193);
    -fx-color: rgb(0, 0, 0);
 }
+
+#txt_title_champs{
+	-fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 10px;
+    -fx-line-height: 1px;
+    -fx-font-weight: 600;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+}
+
+#txt_nom{
+    -fx-width: 100%;
+    -fx-min-height: 32px;
+    -fx-border-size: 1px;
+    -fx-border-color:rgb(110, 106, 105);
+    -fx-margin: 4px 0px;
+    -fx-border-radius: 8px;
+    -fx-padding: 9px;
+    -fx-outline: 0px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 20px;
+    -fx-line-height: 20px;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 600;
+    -fx-background-color: transparent;
+}
+
+#txt_pwd,#txt_nom_insc,#txt_email_insc,#txt_age_insc,#txt_age_insc,#txt_pwd_insc,#comboBox{
+    -fx-width: 100%;
+    -fx-min-height: 32px;
+    -fx-border-size: 1px;
+    -fx-border-color:rgb(110, 106, 105);
+    -fx-margin: 4px 0px;
+    -fx-border-radius: 8px;
+    -fx-padding: 9px;
+    -fx-outline: 0px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 20px;
+    -fx-line-height: 20px;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 600;
+    -fx-background-color: transparent;
+	
+}
+
+#btn_act,#btn_insc{
+	-fx-display: flex;
+    -fx-webkit-box-align: center;
+    -fx-align-items: center;
+    -fx-webkit-box-pack: center;
+    -fx-justify-content: center;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 16px;
+    -fx-line-height: 36.8px;
+    -fx-font-weight: 700;
+    -fx-text-decoration: none;
+    -fx-padding: 10px 24px;
+    -fx-border-radius: 8px;
+    -fx-cursor: pointer;
+    -fx-transition: all 0.2s ease 0s;
+    -fx-border-size: 2px;
+    -fx-background-color: rgb(80, 77, 193);
+    -fx-color: #000000;
+}
+#link{
+	
+	-fx-color: rgb(80, 77, 193);
+    -fx-text-decoration: underline;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 14px;
+    -fx-line-height: 20px;
+    -fx-margin-bottom: 24px;
+    -fx-cursor: pointer;
+}
+
+#cwLFUr{
+    -fx-margin: 0px 0px 24px;
+    -fx-font-family: "Nunito Sans", sans-serif;
+    -fx-font-size: 51.2px;
+    -fx-line-height: 51.2px;
+    -fx-color: #000000;
+    -fx-text-decoration: none;
+    -fx-font-weight: 900;
+}
+
+
